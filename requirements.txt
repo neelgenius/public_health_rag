@@ -1,0 +1,9 @@
+pdfplumber
+sentence-transformers
+rank-bm25
+numpy
+tqdm
+regex
+scikit-learn
+faiss-cpu
+python-dotenv
