@@ -3,15 +3,10 @@ from typing import List, Dict
 
 
 class LocalLLMGenerator:
-    def __init__(self, model_name: str = "mistral"):
+    def __init__(self, model_name: str = "llama3.2:3b"):
         self.model_name = model_name
 
-    def generate(
-        self,
-        query: str,
-        retrieved_chunks: List[Dict],
-        max_chunks: int = 5
-    ) -> str:
+    def generate(self, query, retrieved_chunks, max_chunks=5):
         context_blocks = []
 
         for i, c in enumerate(retrieved_chunks[:max_chunks], start=1):
@@ -47,9 +42,11 @@ Answer:
 
         result = subprocess.run(
             ["ollama", "run", self.model_name],
-            input=prompt,
-            text=True,
-            capture_output=True
+            input=prompt.encode("utf-8"),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
         )
 
-        return result.stdout.strip()
+        output = result.stdout + result.stderr
+
+        return output.decode("utf-8", errors="replace").strip()
