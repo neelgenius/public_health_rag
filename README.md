@@ -20,3 +20,29 @@ A Retrieval-Augmented Generation (RAG) system for public health documents.
 ## Dependencies
 
 See `requirements.txt` for required packages.
+
+
+## Snapshots
+
+Below are example outputs from the Retrieval-Augmented Generation (RAG) pipeline.
+
+### Retrieved Context Chunks
+
+<p align="center">
+  <img width="1906" height="1080" alt="retrieved_chunks"
+       src="https://github.com/user-attachments/assets/ebfaabbf-3dbb-42fb-bba8-e2077316875f" />
+</p>
+
+<br><br>
+
+### Final Answer Generation
+
+<p align="center">
+  <img width="1920" height="1080" alt="final_answer"
+       src="https://github.com/user-attachments/assets/26f8b2de-e20b-4936-a3ba-aac9844ea989" />
+</p>
+
+
+
+
+
